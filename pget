@@ -11,8 +11,8 @@ echo "---------------------"
 
 set -e
 
-BUILD_DIR=/home/build
-CACHE_DIR=/home/cachebuild
+BUILD_DIR=/home/runner/beebot/build
+CACHE_DIR=/home/runner/beebot/cachebuild
 LP_DIR=$(cd $(dirname "$0"); cd ..; pwd)
 
 function error() {
@@ -63,7 +63,7 @@ for PACKAGE in $*; do
   fi
 done
 
-mkdir -p /home/build/.apt
+mkdir -p /home/runner/beebot/build/.apt
 
 for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
   topic "Installing $(basename $DEB)"
